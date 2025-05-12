@@ -1,0 +1,97 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Orbitron', sans-serif;
+  background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+  color: #fff;
+  overflow-x: hidden;
+}
+
+.main-title {
+  text-align: center;
+  font-size: 3rem;
+  margin-top: 40px;
+  color: #00ffe1;
+  text-shadow: 0 0 5px #00ffe1, 0 0 20px #00ffe1;
+  animation: glowPulse 2s infinite alternate;
+}
+
+@keyframes glowPulse {
+  from {
+    text-shadow: 0 0 5px #00ffe1, 0 0 20px #00ffe1;
+  }
+  to {
+    text-shadow: 0 0 20px #00ffe1, 0 0 40px #00ffe1;
+  }
+}
+
+.card-deck {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+.magic-card {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 8px 32px rgba(0, 255, 255, 0.2);
+  width: 280px;
+  padding: 25px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.magic-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 40px rgba(0, 255, 255, 0.5);
+}
+
+.card-content h2 {
+  color: #ff66ff;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.card-content h2:hover {
+  color: #ffffff;
+  text-shadow: 0 0 10px #ff66ff;
+}
+
+.card-content p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.extra-info {
+  margin-top: 15px;
+  color: #a0fefe;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.5s ease, max-height 0.5s ease;
+}
+
+.extra-info.show {
+  opacity: 1;
+  max-height: 200px;
+}
+
+@media screen and (max-width: 768px) {
+  .card-deck {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main-title {
+    font-size: 2.2rem;
+  }
+}
